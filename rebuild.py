@@ -5,9 +5,9 @@ try:
     try:
         # Step1: Rebuild Folders
         rebuild_all(df=folders, tag="Folders")
-        print("Step 1: 创建文件夹成功")
+        print("Step 1: created folder successfully")
     except Exception as e:
-        print("Step 1: 创建文件夹失败", e)
+        print("Step 1: created folder failed", e)
 
     try:
         # Step 2: Upload all pbix files
@@ -15,7 +15,7 @@ try:
         for ReportName in powerbireports.Name.values:
             upload_pbix(df=get_df_from_pbrs('PowerBIReports'), report_name=ReportName,
                         reports_path=pbix_folder_path)
-        print("Step 2: 上传pbix文件成功")
+        print("Step 2: upload pbix file successfully")
     except Exception as e:
         print("Step 3: 上传pbix文件失败", e)
 
