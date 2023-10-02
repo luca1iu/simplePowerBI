@@ -17,16 +17,16 @@ try:
                         reports_path=pbix_folder_path)
         print("Step 2: upload pbix file successfully")
     except Exception as e:
-        print("Step 3: 上传pbix文件失败", e)
+        print("Step 3: upload pbix file failed", e)
 
     try:
         # Step3: DataSource
         current_reports = get_df_from_pbrs('PowerBIReports')
         for ReportID in current_reports.Id.values:
             add_data_source_connection(report_id=ReportID, db_username=db_username, db_password=db_password)
-        print("Step 3: 创建Data Source成功")
+        print("Step 3: created Data Source successfully")
     except Exception as e:
-        print("Step 3: 创建Data Source失败", e)
+        print("Step 3: created Data Source failed", e)
 
     try:
         # Step 4：Refresh Plans
